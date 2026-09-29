@@ -9,7 +9,7 @@ Gator is a multi-user command-line RSS aggregator I'm building in Go.
 
 **How it works so far**
 
-- A small command registry maps CLI arguments (`login`, `register`, …) to handler functions that share application state.
+- A small command registry maps CLI arguments (like `login`) to handler functions that share application state.
 - User config lives in `~/.gatorconfig.json`, so credentials and the database URL never touch the repo.
 - The schema and queries are plain SQL files, and sqlc generates the Go database layer from them.
 
