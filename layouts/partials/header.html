@@ -1,0 +1,4 @@
+<header>
+  <a class="brand" href="{{ "/" | relURL }}">CBB</a>
+  <nav>{{ range site.Menus.main }}<a href="{{ .URL }}">{{ .Name }}</a>{{ end }}</nav>
+</header>
