@@ -1,0 +1,6 @@
+<footer>
+  <a href="{{ site.Params.github }}">GitHub</a>
+  {{ with site.Params.linkedin }} · <a href="{{ . }}">LinkedIn</a>{{ end }}
+  {{ with site.Params.email }} · <a href="mailto:{{ . }}">Email</a>{{ end }}
+  <p>© {{ now.Year }} Cameron Brown</p>
+</footer>
