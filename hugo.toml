@@ -6,6 +6,7 @@ title = "Cameron Brown — Web Developer"
   description = "Web developer in Oklahoma. WordPress, Go, and analytics."
   github = "https://github.com/cm-brown"
   linkedin = "https://www.linkedin.com/in/cameron-m-brown"
+  email = "cmichaelbrown99@gmail.com"
 
 [menus]
   [[menus.main]]
