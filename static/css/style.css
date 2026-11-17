@@ -42,9 +42,9 @@ pre code{background:none;border:0;padding:0;color:inherit}
 .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
 /* Header */
-.site-header{display:flex;justify-content:space-between;align-items:center;gap:var(--space-4);padding-block:var(--space-6)}
+.site-header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:var(--space-4);padding-block:var(--space-6)}
 .site-header .brand{display:inline-flex;align-items:center;gap:var(--space-2);color:var(--ink);text-decoration:none;font-weight:800;letter-spacing:.06em}
-.site-header .brand img{width:32px;height:32px;display:block}
+.site-header .brand img{width:clamp(200px,26vw,270px);height:auto;display:block}
 .site-header nav{display:flex;gap:var(--space-6);font-size:15px;line-height:22px}
 .site-header nav a{color:var(--ink);text-decoration:none;padding:var(--space-1) 0;border-bottom:2px solid transparent}
 .site-header nav a:hover{border-bottom-color:var(--line)}
