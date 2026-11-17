@@ -1,9 +1,15 @@
 {{ define "main" }}
-<article>
-  <h1>{{ .Title }}</h1>
-  {{ with .Params.tags }}<ul class="tags">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
-  {{ .Content }}
-  {{ with .Params.repo }}<p><a href="{{ . }}">View the code on GitHub →</a></p>{{ end }}
-  {{ with .Params.demo }}<p><a href="{{ . }}">Live demo →</a></p>{{ end }}
+<article class="wrap">
+  <header class="page-head">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.tags }}<ul class="tags">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
+  </header>
+  <div class="prose">{{ .Content }}</div>
+  {{ if or .Params.repo .Params.demo }}
+  <div class="actions">
+    {{ with .Params.repo }}<a class="btn btn-primary" href="{{ . }}">See the code on GitHub</a>{{ end }}
+    {{ with .Params.demo }}<a class="btn btn-secondary" href="{{ . }}">Live demo</a>{{ end }}
+  </div>
+  {{ end }}
 </article>
 {{ end }}

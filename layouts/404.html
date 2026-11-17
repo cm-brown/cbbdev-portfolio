@@ -1,0 +1,31 @@
+{{ define "main" }}
+<section class="lost wrap">
+  <img class="wizard" src="{{ "img/cbb-wizard.svg" | relURL }}" alt="" width="180" height="210">
+  <h1 class="visually-hidden">404: page not found</h1>
+  <svg class="smoke-title" viewBox="0 0 420 160" aria-hidden="true">
+    <defs>
+      <filter id="smoke" x="-15%" y="-30%" width="130%" height="160%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.012 0.03" numOctaves="3" seed="11" result="n"/>
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="16" xChannelSelector="R" yChannelSelector="G" result="d"/>
+        <feGaussianBlur in="d" stdDeviation="5" result="soft"/>
+        <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="2" seed="4" result="grain"/>
+        <feDisplacementMap in="d" in2="grain" scale="6" xChannelSelector="R" yChannelSelector="G" result="d2"/>
+        <feGaussianBlur in="d2" stdDeviation="0.9" result="core"/>
+        <feMerge><feMergeNode in="soft"/><feMergeNode in="core"/></feMerge>
+      </filter>
+      <linearGradient id="smoke-fill" x1="0" x2="1">
+        <stop offset="0" stop-color="#8C84C4"/>
+        <stop offset=".5" stop-color="#3A2E8C"/>
+        <stop offset="1" stop-color="var(--ink)"/>
+      </linearGradient>
+      <linearGradient id="rise" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#fff" stop-opacity=".25"/>
+        <stop offset=".45" stop-color="#fff" stop-opacity="1"/>
+      </linearGradient>
+      <mask id="rise-mask"><rect width="420" height="160" fill="url(#rise)"/></mask>
+    </defs>
+    <text x="210" y="128" text-anchor="middle" font-family="Bricolage Grotesque, system-ui, sans-serif" font-weight="800" font-size="150" letter-spacing="-4" fill="url(#smoke-fill)" filter="url(#smoke)" mask="url(#rise-mask)">404</text>
+  </svg>
+  <p>This page vanished. <a href="{{ "/" | relURL }}">Head home?</a></p>
+</section>
+{{ end }}

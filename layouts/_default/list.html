@@ -1,5 +1,13 @@
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
-{{ .Content }}
-<div class="grid">{{ range .Pages.ByWeight }}{{ partial "project-card.html" . }}{{ end }}</div>
+<div class="wrap">
+  <header class="page-head">
+    <h1>{{ .Title }}</h1>
+    {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+  </header>
+  {{ with .Pages.ByWeight }}
+  <div class="grid">{{ range . }}{{ partial "project-card.html" . }}{{ end }}</div>
+  {{ else }}
+  <p class="empty">Nothing here yet.</p>
+  {{ end }}
+</div>
 {{ end }}

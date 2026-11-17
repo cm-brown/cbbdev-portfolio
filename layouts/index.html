@@ -1,10 +1,13 @@
 {{ define "main" }}
-<section class="hero">
+<section class="hero wrap">
   <h1>{{ .Title }}</h1>
-  {{ .Content }}
+  <p class="tagline">{{ .Content | plainify | htmlUnescape | strings.TrimSpace }}</p>
+  <div class="actions"><a class="btn btn-spark" href="{{ "projects/" | relURL }}">See my work</a></div>
 </section>
-<section>
+<div class="star-band" aria-hidden="true"></div>
+<section class="section wrap">
   <h2>Selected projects</h2>
+  <p class="section-intro">A few things I've built lately, mostly in Go.</p>
   <div class="grid">
     {{ range first 6 (where site.RegularPages "Section" "projects").ByWeight }}{{ partial "project-card.html" . }}{{ end }}
   </div>

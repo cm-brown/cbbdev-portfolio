@@ -1,5 +1,15 @@
-<footer>
-  <a href="{{ site.Params.github }}">GitHub</a>
-  {{ with site.Params.linkedin }} · <a href="{{ . }}">LinkedIn</a>{{ end }}
-  <p>© {{ now.Year }} Cameron Brown{{ with site.Params.email }} · <a href="mailto:{{ . }}">{{ . }}</a>{{ end }}</p>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <img src="{{ "img/cbb-icon.svg" | relURL }}" alt="CBB" width="48" height="48">
+    </div>
+    <div>
+      <p class="links">
+        <a href="{{ site.Params.github }}">GitHub</a>
+        {{ with site.Params.linkedin }}<a href="{{ . }}">LinkedIn</a>{{ end }}
+        {{ with site.Params.email }}<a href="mailto:{{ . }}">{{ . }}</a>{{ end }}
+      </p>
+      <p class="legal">© {{ now.Year }} Cameron Brown</p>
+    </div>
+  </div>
 </footer>

@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
   <meta name="description" content="{{ with .Summary }}{{ . | plainify }}{{ else }}{{ site.Params.description }}{{ end }}">
+  <meta name="theme-color" content="#F6F3EC" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#14152B" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="{{ "img/cbb-icon.svg" | relURL }}" type="image/svg+xml">
+  <link rel="preload" href="{{ "fonts/bricolage-grotesque-latin-400-normal.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ "fonts/bricolage-grotesque-latin-800-normal.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
 </head>
 <body>
