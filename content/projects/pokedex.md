@@ -3,6 +3,7 @@ title: "Pokedex REPL"
 summary: "Interactive Go REPL for exploring the PokéAPI, with a custom time-based response cache."
 tags: ["Go", "REST API", "Caching"]
 repo: "https://github.com/cm-brown/pokedex"
+category: "backend"
 weight: 4
 ---
 A command-line REPL in Go for exploring Pokémon locations and catching and inspecting Pokémon through the PokéAPI.

@@ -6,10 +6,21 @@
 </section>
 <div class="star-band" aria-hidden="true"></div>
 <section class="section wrap">
-  <h2>Selected projects</h2>
-  <p class="section-intro">A few things I've built lately, mostly in Go.</p>
-  <div class="grid">
-    {{ range first 6 (where site.RegularPages "Section" "projects").ByWeight }}{{ partial "project-card.html" . }}{{ end }}
+  <h2>Recent projects</h2>
+  <p class="section-intro">A few things I've built lately.</p>
+  {{ $projects := where site.RegularPages "Section" "projects" }}
+  <div class="project-groups">
+    {{ range slice (dict "key" "backend" "label" "Backend") (dict "key" "web" "label" "Web") }}
+    {{ $group := . }}
+    {{ with (where $projects "Params.category" .key).ByWeight }}
+    <div class="project-group project-group--{{ $group.key }}">
+      <h3 class="group-title">{{ $group.label }}</h3>
+      <div class="grid">
+        {{ range first 6 . }}{{ partial "project-card.html" . }}{{ end }}
+      </div>
+    </div>
+    {{ end }}
+    {{ end }}
   </div>
 </section>
 {{ end }}

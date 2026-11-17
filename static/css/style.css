@@ -68,6 +68,8 @@ pre code{background:none;border:0;padding:0;color:inherit}
 /* Sections */
 .section{padding-top:var(--space-12)}
 .section-intro{color:var(--ink-muted);margin-bottom:var(--space-6)}
+.group-title{font:500 13px/18px var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--ink-muted);margin:0 0 var(--space-4)}
+.project-groups{display:grid;gap:var(--space-8)}
 .page-head{padding-block:var(--space-8) var(--space-6)}
 .prose{max-width:40em}
 .prose p,.prose li{font-size:17px;line-height:26px}
@@ -103,6 +105,11 @@ article .tags{margin-bottom:var(--space-6)}
   .wrap{padding-inline:var(--space-6)}
   .hero{padding-block:var(--space-16)}
   .section{padding-top:var(--space-16)}
+}
+@media (min-width:900px){
+  .project-groups{grid-template-columns:2fr 1fr;align-items:start}
+  .project-group--backend .grid{grid-template-columns:repeat(2,1fr)}
+  .project-group--web .grid{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){
   *{transition:none!important}

@@ -4,6 +4,7 @@ summary: "Markdown-to-HTML static site generator written from scratch in Python,
 tags: ["Python", "Parsing", "Testing"]
 repo: "https://github.com/cm-brown/static_site_generator"
 demo: "https://cm-brown.github.io/static_site_generator/"
+category: "backend"
 weight: 3
 ---
 A static site generator built without any Markdown libraries. It parses Markdown into blocks and inline nodes, converts them into an HTML node tree, and renders every page in `content/` through a template, with unit tests along the way.
